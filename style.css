@@ -1,11 +1,32 @@
 body {
-	background-color: aqua;
 	display: flex;
 	justify-content: center;
-	padding-top: 100px;
+	padding-top: 200px;
+	background-color: black;
 }
 
-h1 {
-	color: red;
-	font-size: 50px;
+.element {
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	background-color: red;
+	animation-name: circle-to-square;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes circle-to-square {
+	0% {
+	}
+
+	50% {
+		background-color: blueviolet;
+		width: 200px;
+		height: 200px;
+		border-radius: 10px;
+	}
+
+	100% {
+		background-color: red;
+	}
 }
