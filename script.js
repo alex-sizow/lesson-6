@@ -1,20 +1,13 @@
-const a = 'Привет мир!!!';
+console.log('Hello world!!!');
 
-const b = 5;
-const c = 7;
+function addText() {
+	let input = document.getElementById('myInput').value;
+	let text = document.createTextNode(input);
+	let li = document.createElement('li');
 
-let name = '';
+	li.append(text);
 
-let input = document.getElementById('myInput').value;
+	document.getElementById('list').append(li);
 
-function toggleName(string) {
-	name = string;
-}
-
-function info(string) {
-	alert(`Hello World! ${string} ${name} ${inputValue}`);
-}
-
-function inputAlert() {
-	alert(document.getElementById('myInput').value);
+	document.getElementById('myInput').value = '';
 }
