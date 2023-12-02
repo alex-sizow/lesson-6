@@ -25,12 +25,21 @@ ul {
 
 ul > li {
 	background-color: rgb(57, 52, 52);
-	padding: 10px;
+	padding: 12px;
 	border-radius: 10px;
 	box-sizing: border-box;
 	width: 280px;
-	text-align: center;
+	display: flex;
+	align-items: center;
 	min-height: 61px;
+	position: relative;
+}
+
+ul > li > button {
+	background-color: rgb(57, 52, 52);
+	position: absolute;
+	right: 12px;
+	font-size: 24px;
 }
 
 .button {
