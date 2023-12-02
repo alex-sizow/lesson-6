@@ -12,7 +12,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 	gap: 30px;
-	padding-top: 250px;
+	padding-top: 100px;
 	color: white;
 }
 
@@ -32,6 +32,7 @@ ul > li {
 	display: flex;
 	align-items: center;
 	min-height: 61px;
+	height: auto;
 	position: relative;
 }
 
