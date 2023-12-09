@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+header {
+	padding: 43px 165px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header > a {
+	padding-bottom: 6px;
+}
+
+header > nav {
+	display: flex;
+	gap: 44px;
+}
+
+header a {
+	color: #35414b;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+header > div {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+header > div > a {
+}
+
+header > div > button {
+	color: #794cff;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 16px;
+	border-radius: 4px;
+	background: #ece5ff;
+	width: 168px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main {
+	margin-top: 116px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sale {
+	border-radius: 100px;
+	height: 32px;
+	background: #f2f9eb;
+	display: flex;
+}
+
+.sale > button {
+	border-radius: 100px;
+	padding: 0 16px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #81c43b;
+}
+
+.sale > span {
+	color: #35414b;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 16px;
+	margin-left: 8px;
+	margin-right: 12px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
