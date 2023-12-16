@@ -5,6 +5,7 @@ function addTask() {
 		return;
 	}
 
+	
 	const idDate = new Date().getTime();
 
 	const button = document.createElement('button');
