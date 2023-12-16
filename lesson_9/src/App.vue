@@ -1,28 +1,27 @@
 <script setup>
 import { ref } from 'vue';
 
-const textInput = ref('');
-
-const items = ref([
-	{ id: 1, text: 'Read' },
-	{ id: 2, text: 'Build' },
+const tasks = ref([
+	{ id: 1, text: 'Build' },
+	{ id: 2, text: 'Read' },
 	{ id: 3, text: 'Write' },
 ]);
 
-const addTask = () => {
-	const idDate = new Date().getTime();
+const inputText = ref('');
 
-	if (textInput.value === '') {
+const addTask = () => {
+	const text = inputText.value;
+	if (text === '') {
 		return;
 	}
 
-	const text = textInput.value;
-	items.value.push({ id: idDate, text: text });
-	textInput.value = '';
+	const idDate = new Date().getTime();
+	tasks.value.push({ id: idDate, text: text });
+	inputText.value = '';
 };
 
 const removeTask = id => {
-	items.value = items.value.filter(item => item.id !== id);
+	tasks.value = tasks.value.filter(task => task.id !== id);
 };
 </script>
 
@@ -31,7 +30,7 @@ const removeTask = id => {
 		<h1>TODO list</h1>
 		<input
 			type="text"
-			v-model="textInput" />
+			v-model="inputText" />
 		<button
 			class="button"
 			@click="addTask">
@@ -39,16 +38,23 @@ const removeTask = id => {
 		</button>
 		<ul>
 			<li
-				v-for="item in items"
-				:key="item.id">
-				{{ item.text }}
-				<button @click="removeTask(item.id)">❌</button>
+				v-for="task in tasks"
+				:key="task.id">
+				{{ task.text }}
+				<button @click="removeTask(task.id)">❌</button>
 			</li>
 		</ul>
 	</div>
 </template>
 
 <style scoped>
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+}
+
 .container {
 	background-color: black;
 	display: flex;
@@ -58,6 +64,10 @@ const removeTask = id => {
 	gap: 30px;
 	padding-top: 100px;
 	color: white;
+}
+
+h1 {
+	font-size: 30px;
 }
 
 ul {
@@ -104,6 +114,8 @@ ul > li > button {
 }
 
 input {
+	background-color: aliceblue;
+	color: black;
 	padding: 10px 20px;
 	box-sizing: border-box;
 	width: 280px;
