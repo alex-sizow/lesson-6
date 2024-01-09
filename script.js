@@ -5,24 +5,12 @@ function addTask() {
 		return;
 	}
 
-	
-	const idDate = new Date().getTime();
-
-	const button = document.createElement('button');
-	const textButton = document.createTextNode('❌');
-	button.append(textButton);
-
-	button.addEventListener('click', function () {
-		document.getElementById(idDate).remove();
-	});
-
 	const li = document.createElement('li');
 	const textLi = document.createTextNode(input);
-	li.append(textLi);
-	li.append(button);
 
-	li.id = idDate;
+	li.append(textLi);
 
 	document.getElementById('list').append(li);
+
 	document.getElementById('myInput').value = '';
 }

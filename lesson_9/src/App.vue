@@ -1,18 +1,24 @@
 <script setup>
 import { ref } from 'vue';
 
-const tasks = ref([
-	'Купи хлеб',
-	'Не купи хлеб',
-	'Вынеси собаку',
-	'Погуляй с псом',
-]);
-
 const inputText = ref('');
+
+const tasks = ref([
+	'Купить хлеб',
+	'Провести пару',
+	'Не купить хлеб',
+	'Установить фреймворк',
+]);
 
 const addTask = () => {
 	const text = inputText.value;
+
+	if (text === '') {
+		return;
+	}
+
 	tasks.value.push(text);
+	inputText.value = '';
 };
 
 const removeTask = id => {
@@ -35,8 +41,8 @@ const removeTask = id => {
 			<li
 				v-for="(task, index) in tasks"
 				:key="index">
-				{{ task
-				}}<button @click="removeTask(index)">❌</button>
+				{{ task }}
+				<button @click="removeTask(index)">❌</button>
 			</li>
 		</ul>
 	</div>
@@ -45,10 +51,10 @@ const removeTask = id => {
 <style scoped>
 .container {
 	display: flex;
-	flex-direction: column;
 	gap: 20px;
+	flex-direction: column;
+	align-items: center;
 }
-
 ul {
 	font-size: 24px;
 	display: flex;
